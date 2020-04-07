@@ -9,8 +9,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
+  constructor() { 
+ 
+  }
+  isLoading : boolean = false;
+  isOpen : boolean = false;
+  serverId : number = 3;
+  serverStatus : boolean = false;
 
-  constructor() { }
+  doFun() {
+    alert('hello world clicked!'+this.serverId)
+  }
+  getServerStatus () {
+   return this.serverStatus? 'Online' : 'Offline'
+  }
+  getLoadingStatus () {
+    return this.isLoading? 'Loading....' : 'Completed'
+   }
+  onClick(){
+    this.isLoading = true;
+
+    setTimeout(() => {
+      this.serverStatus = !this.serverStatus;
+      this.isLoading = false;
+    }, 2000);
+  }
 
   ngOnInit(): void {
   }

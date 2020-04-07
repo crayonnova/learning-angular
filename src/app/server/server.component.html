@@ -1,1 +1,6 @@
 <p>server works!</p>
+<button class="btn btn-success" [disabled]='isLoading' (click)='onClick()'>Click me!</button>
+<div> {{ serverId }} </div>
+<p>{{ getServerStatus() }}</p>
+<!-- <p>{{ getLoadingStatus() }}</p> -->
+<button (click)="doFun()"> click me </button>
