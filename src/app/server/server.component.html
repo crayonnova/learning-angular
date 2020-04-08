@@ -1,6 +1,15 @@
 <p>server works!</p>
+<!-- <input class="form-control" type='text' (input)='onInput($event)'> -->
+
+<!-- alternative better without event function -->
+<input type="text"
+    class='form-control'
+    placeholder="Enter server"
+    [(ngModel)] = "text"
+>
+
 <button class="btn btn-success" [disabled]='isLoading' (click)='onClick()'>Click me!</button>
-<div> {{ serverId }} </div>
+<div> {{ text }} </div>
 <p>{{ getServerStatus() }}</p>
 <!-- <p>{{ getLoadingStatus() }}</p> -->
 <button (click)="doFun()"> click me </button>

@@ -12,11 +12,12 @@ export class ServerComponent implements OnInit {
   constructor() { 
  
   }
+
   isLoading : boolean = false;
   isOpen : boolean = false;
   serverId : number = 3;
   serverStatus : boolean = false;
-
+  text : string = '';
   doFun() {
     alert('hello world clicked!'+this.serverId)
   }
@@ -25,7 +26,7 @@ export class ServerComponent implements OnInit {
   }
   getLoadingStatus () {
     return this.isLoading? 'Loading....' : 'Completed'
-   }
+  }
   onClick(){
     this.isLoading = true;
 
@@ -34,7 +35,9 @@ export class ServerComponent implements OnInit {
       this.isLoading = false;
     }, 2000);
   }
-
+  onInput(event : Event ){
+    this.text = (<HTMLInputElement>event.target).value;
+  }
   ngOnInit(): void {
   }
 
