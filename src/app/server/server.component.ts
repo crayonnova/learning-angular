@@ -12,32 +12,28 @@ export class ServerComponent implements OnInit {
   constructor() { 
  
   }
-
-  isLoading : boolean = false;
-  isOpen : boolean = false;
-  serverId : number = 3;
-  serverStatus : boolean = false;
+  
   text : string = '';
-  doFun() {
-    alert('hello world clicked!'+this.serverId)
-  }
-  getServerStatus () {
-   return this.serverStatus? 'Online' : 'Offline'
-  }
-  getLoadingStatus () {
-    return this.isLoading? 'Loading....' : 'Completed'
-  }
-  onClick(){
-    this.isLoading = true;
+  isLoading : boolean = false;
+  servers : string[]= [];
 
-    setTimeout(() => {
-      this.serverStatus = !this.serverStatus;
-      this.isLoading = false;
-    }, 2000);
+  onClick(){
+    this.text = this.text.trim();
+
+    if(this.text === '' || this.text == null){
+      console.log('It is empty');
+      return ;
+    }
+    
+    this.text = this.text.replace(/  +/g, ' ').toLowerCase();
+    
+    let isDuplicate = this.servers.some( (server) =>  server == this.text );
+
+    (isDuplicate)? console.log('Duplicate') : this.servers.push(this.text);
+    console.log(this.servers);
+    this.text = ''; 
   }
-  onInput(event : Event ){
-    this.text = (<HTMLInputElement>event.target).value;
-  }
+  
   ngOnInit(): void {
   }
 

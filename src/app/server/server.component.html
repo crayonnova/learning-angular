@@ -9,7 +9,8 @@
 >
 
 <button class="btn btn-success" [disabled]='isLoading' (click)='onClick()'>Click me!</button>
-<div> {{ text }} </div>
-<p>{{ getServerStatus() }}</p>
+
+
+
+<div *ngFor='let server of servers'>{{ server }}</div>
 <!-- <p>{{ getLoadingStatus() }}</p> -->
-<button (click)="doFun()"> click me </button>
