@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, setTestabilityGetter, NgModule } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-server',
@@ -8,16 +9,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css']
 })
+
 export class ServerComponent implements OnInit {
-  constructor() { 
- 
+  constructor(private title : Title) { 
+    
+   
   }
   
+  setTitle(newtitle : string){
+      this.title.setTitle('hello')
+  }
+ 
   text : string = '';
   isLoading : boolean = false;
   servers : string[]= [];
-
+  
   onClick(){
+    this.setTitle('hello')
+    // console.log(this.hello);
     this.text = this.text.trim();
 
     if(this.text === '' || this.text == null){
@@ -29,7 +38,7 @@ export class ServerComponent implements OnInit {
     
     let isDuplicate = this.servers.some( (server) =>  server == this.text );
 
-    (isDuplicate)? console.log('Duplicate') : this.servers.push(this.text);
+    (isDuplicate) ? console.log('Duplicate') : this.servers.push(this.text);
     console.log(this.servers);
     this.text = ''; 
   }
