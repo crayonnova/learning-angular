@@ -1,16 +1,6 @@
-<p>server works!</p>
-<!-- <input class="form-control" type='text' (input)='onInput($event)'> -->
+<div class="form-group row">
+    <input type="text" class="form-control col-md-4" [(ngModle)]='name'>
+    <input type="submit" class="btn btn-success col-md-2" value='Submit'>
+</div>
 
-<!-- alternative better without event function -->
-<input type="text"
-    class='form-control'
-    placeholder="Enter server"
-    [(ngModel)] = "text"
->
-
-<button class="btn btn-success" [disabled]='isLoading' (click)='onClick()'>Click me!</button>
-
-
-
-<div *ngFor='let server of servers'>{{ server }}</div>
-<!-- <p>{{ getLoadingStatus() }}</p> -->
+<app-server-item></app-server-item>
