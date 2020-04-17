@@ -5,7 +5,9 @@ import {FormsModule} from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
-import { ServerItemComponent } from './server-item/server-item.component';
+import { ServerItemComponent } from './server/server-item/server-item.component';
+import { ServerDetailComponent } from './server/server-detail/server-detail.component';
+import { TestingComponent } from './testing/testing.component';
 
 
 
@@ -15,9 +17,12 @@ import { ServerItemComponent } from './server-item/server-item.component';
     AppComponent,
     ServerComponent,
     ServerItemComponent,
+    ServerDetailComponent,
+    TestingComponent,
 
   ],
   imports: [
+  
     BrowserModule,
     FormsModule
   ],

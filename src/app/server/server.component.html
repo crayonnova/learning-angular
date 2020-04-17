@@ -1,6 +1,31 @@
 <div class="form-group row">
-    <input type="text" class="form-control col-md-4" [(ngModle)]='name'>
-    <input type="submit" class="btn btn-success col-md-2" value='Submit'>
+    <div class="input-group col-md-5">
+        <input type="text" class="form-control" #name placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="input-group-append">
+                <span class="input-group-text px-1 py-0" id="basic-addon1">
+                    <input type="checkbox" id="online" #check class=""> 
+                    <label for="online" class="m-0">online</label>
+                </span>
+            </div>
+      </div>
+    <input type="submit" class="btn btn-success col-md-2" value='Submit'
+        (click) = 'onSubmit(name,check)'
+    >
+    
+  
 </div>
 
-<app-server-item></app-server-item>
+<div class="row">
+    <div class="col-md-6">
+        <app-server-item 
+    *ngFor= 'let server of servers'
+    [serverItem] = 'server'
+    (showServerDetail) = 'onShowServerDetail($event)'
+></app-server-item>
+
+    </div>
+    <div class="col-md-6">
+        <app-server-detail *ngIf='serverDetailItem' [serverDetailItem] = 'serverDetailItem'></app-server-detail>
+    </div>
+</div>
+
