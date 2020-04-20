@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-learning-test';
+  @ViewChild('foo') foo : ElementRef;
 
   constructor(){
-
+    
+  }
+  doFun(){
+    console.log(this.foo);
   }
 
 

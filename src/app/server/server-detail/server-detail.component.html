@@ -1,3 +1,8 @@
-<h1>  {{ serverDetailItem.name }}</h1>
-<h3> {{ serverDetailItem.status }}</h3>
-<p> {{ serverDetailItem.detail }}</p>
+<div class="detail">
+    <h1>  {{ serverDetailItem.name }} 
+
+        <span [className]="serverDetailItem.status? 'asdf' : 'offline' ">&#9899;</span>
+    </h1>
+    <!-- <h3> {{ serverDetailItem.status }}</h3> -->
+    <p> {{ serverDetailItem.detail }}</p>
+</div>

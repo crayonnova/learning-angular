@@ -1,2 +1,2 @@
-<p (click)='onShowDetail(serverItem)'> {{ serverItem.name }} <span [ngClass] = "{'text-danger' : !serverItem.status, 'text-success' : serverItem.status}"> {{ serverItem.status? 'Online': 'Offline'}} </span></p>
+<p (click)='onShowDetail(serverItem)'> <ng-content></ng-content></p>
 

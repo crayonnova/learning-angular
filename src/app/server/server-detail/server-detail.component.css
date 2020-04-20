@@ -1,0 +1,9 @@
+.detail h1 span{
+    font-size: 15px;
+    vertical-align: text-top;
+    color: transparent;
+    text-shadow: 0 0 0 #2aaa52;
+}
+.detail h1 span.offline{
+    text-shadow: 0 0 0 #e02932;
+}

@@ -5,14 +5,16 @@ import { server } from '../server';
 
 @Component({
   selector: 'app-server-item',
+  inputs : ['serverItem'],
+  outputs : ['showServerDetail'],
   templateUrl: './server-item.component.html',
   styleUrls: ['./server-item.component.css']
 })
 export class ServerItemComponent implements OnInit {
 
-  @Input() serverItem: server;
+  serverItem: server;
 
-  @Output() showServerDetail = new EventEmitter<server>();
+  showServerDetail = new EventEmitter<server>();
 
 
   constructor() { 
@@ -23,7 +25,7 @@ export class ServerItemComponent implements OnInit {
     this.showServerDetail.emit({
       name :item.name,
       status : item.status,
-      detail : 'something'
+      detail : item.detail
     })
   }
 

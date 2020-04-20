@@ -1,18 +1,36 @@
-<div class="form-group row">
-    <div class="input-group col-md-5">
-        <input type="text" class="form-control" #name placeholder="" aria-label="Username" aria-describedby="basic-addon1">
-            <div class="input-group-append">
-                <span class="input-group-text px-1 py-0" id="basic-addon1">
-                    <input type="checkbox" id="online" #check class=""> 
-                    <label for="online" class="m-0">online</label>
-                </span>
+<div class="row">
+    <div class="col-md-8">
+
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" class="form-control" 
+                #name 
+                placeholder="eg. server name" aria-label="Username" aria-describedby="basic-addon1">
+                    <div class="input-group-append">
+                        <span class="input-group-text px-1 py-0" id="basic-addon1">
+                            <input type="checkbox" id="online" 
+                            #check
+                             class=""> 
+                            <label for="online" class="m-0">online</label>
+                        </span>
+                    </div>
+              </div>
+            <div class="pt-3">
+                <textarea class="form-control"
+                #detail
+                placeholder="Descripton"
+                name="" id="" cols="30" rows="10"></textarea>
             </div>
-      </div>
-    <input type="submit" class="btn btn-success col-md-2" value='Submit'
-        (click) = 'onSubmit(name,check)'
-    >
-    
-  
+            <div class="pt-3">
+        
+                <input type="submit" class="btn btn-success" value='Submit'
+                    (click) = 'onSubmit()'
+                >
+            </div>
+            
+          
+        </div>
+    </div>
 </div>
 
 <div class="row">
@@ -21,7 +39,10 @@
     *ngFor= 'let server of servers'
     [serverItem] = 'server'
     (showServerDetail) = 'onShowServerDetail($event)'
-></app-server-item>
+>
+<span>{{ server.name }}</span>
+<span [ngClass] = "{'text-danger' : !server.status, 'text-success' : server.status}"> {{ server.status? 'Online': 'Offline'}} </span>
+</app-server-item>
 
     </div>
     <div class="col-md-6">
