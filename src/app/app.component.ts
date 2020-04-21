@@ -1,20 +1,17 @@
-import { Component, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   title = 'angular-learning-test';
-  @ViewChild('foo') foo : ElementRef;
 
   constructor(){
-    
+    console.log('app comp constructor() called');
   }
-  doFun(){
-    console.log(this.foo);
-  }
+ 
 
-
+  
 }

@@ -18,7 +18,7 @@ export class ServerItemComponent implements OnInit {
 
 
   constructor() { 
-    
+    console.log(' item constrctor() called');
   }
 
   onShowDetail(item : server){
@@ -30,7 +30,7 @@ export class ServerItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+   console.log('item ngOnInit() callled');
   }
 
 }

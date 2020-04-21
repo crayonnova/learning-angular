@@ -118,8 +118,13 @@
               "devServerTarget": "angular-learning-test:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "angular-learning-test"
 }

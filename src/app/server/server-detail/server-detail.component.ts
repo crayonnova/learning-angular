@@ -12,7 +12,7 @@ export class ServerDetailComponent implements OnInit {
 
   
   constructor() {
-  
+    console.log('detail constructor() called');
    }
 
 
